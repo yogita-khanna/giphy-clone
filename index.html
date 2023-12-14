@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giphy</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="nav-bar">
+        <img class="logo" src="images/logo.gif" alt="logo">
+        <div class="a">
+            <div class="b">Reactions</div>
+            <div class="b">Entertainment</div>
+            <div class="b">Sports</div>
+            <div class="b">Stickers</div>
+            <div class="b">Artists</div>
+            <i class="b fa-solid fa-ellipsis-vertical"></i>
+        </div>
+        <div class="upload">Upload</div>
+        <div class="upload">Create</div>
+        <div class="login">
+            <i class="fa-solid fa-user"></i>
+            <div>Log in</div>
+        </div>
+    </div>
+    <div class="hero">
+        <!-- <button id="btn"></button> -->
+          <div id="form">
+            <input id="input" type="search" placeholder="Search All GIFs and Stickers">
+            <button id="btn" style="border: none; background-color: rgb(18, 17, 17);"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+    </div>
+    
+    <div class="res"><div class="results"></div></div>
+
+    <div class="hero-1">
+        <img src="images/gifi-1.gif" alt="gif-1">
+    </div>
+
+    <div class="hero-2">
+        <div class="trending">
+            <div class="part-1">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                <div>Trending</div>
+            </div>
+            <div class="all-gif">
+              All The GIFs &nbsp <i class="fa-solid fa-chevron-right"></i>
+            </div>
+        </div>
+          <div class="trend">   
+            <div class="part-2">
+              <div class="container-fluid p-2">
+                    <div class="main-div w-75 d-flex">
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-interval="false">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <div class="card-wrapper card-wrapper1 d-flex ">
+                                  <!-- <div class="card image">
+                                    <div class="card-body">
+                                      <img id="img-crousel2" src="images/gifi-2.webp" alt="...">
+                                    </div>
+                                  </div>
+          
+                                  <div class="card image">
+                                    <div class="card-body">
+                                      <img id="img-crousel2" src="images/gifi-3.webp" class="d-flex " alt="...">
+                                    </div>
+                                  </div>
+          
+                                  <div class="card image">
+                                    <div class="card-body">
+                                      <img id="img-crousel2" src="images/gifi-4.webp" alt="...">
+                                    </div>
+                                  </div>
+                                  
+                                  <div class="card image">
+                                    <div class="card-body">
+                                      <img id="img-crousel2" src="images/gifi-5.gif" alt="...">
+                                    </div>
+                                  </div>
+          
+                                  <div class="card image">
+                                    <div class="card-body">
+                                      <img id="img-crousel2" src="images/gifi-6.gif" class="d-flex " alt="...">
+                                    </div>
+                                  </div>
+          
+                                  <div class="card image">
+                                    <div class="card-body">
+                                      <img id="img-crousel2" src="images/gifi-7.webp" alt="...">
+                                    </div>
+                                  </div> -->
+
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <div class="card-wrapper cardWrapper1 d-flex">
+                                  <!-- <div class="card image">
+                                    <div class="card-body">
+                                      <img id="img-crousel2" src="images/gifi-8.webp" alt="...">
+                                    </div>
+                                  </div>
+          
+                                  <div class="card image">
+                                    <div class="card-body">
+                                      <img id="img-crousel2" src="images/gifi-9.webp" class="d-flex " alt="...">
+                                    </div>
+                                  </div>
+          
+                                  <div class="card image">
+                                    <div class="card-body">
+                                      <img id="img-crousel2" src="images/gifi-10.gif" alt="...">
+                                    </div>
+                                  </div>
+                                  
+                                  <div class="card image">
+                                    <div class="card-body">
+                                      <img id="img-crousel2" src="images/gifi-11.webp" alt="...">
+                                    </div>
+                                  </div>
+          
+                                  <div class="card image">
+                                    <div class="card-body">
+                                      <img id="img-crousel2" src="images/gifi-12.webp" class="d-flex " alt="...">
+                                    </div>
+                                  </div>
+          
+                                  <div class="card image">
+                                    <div class="card-body">
+                                      <img id="img-crousel2" src="images/gifi-13.png" alt="...">
+                                    </div>
+                                  </div> -->
+
+                                </div>
+                              </div>
+                        
+                              <div class="carousel-item">
+                                <div class="card-wrapper cardWrapper2 d-flex">
+                                  <!-- <div class="card image">
+                                    <div class="card-body">
+                                      <img id="img-crousel2" src="images/gifi-14.jpg" alt="...">
+                                    </div>
+                                  </div>
+          
+                                  <div class="card image">
+                                    <div class="card-body">
+                                      <img id="img-crousel2" src="images/gifi-15.png" class="d-flex " alt="...">
+                                    </div>
+                                  </div>
+          
+                                  <div class="card image">
+                                    <div class="card-body">
+                                      <img id="img-crousel2" src="images/gifi-16.jpg" alt="...">
+                                    </div>
+                                  </div>
+                                  
+                                  <div class="card image">
+                                    <div class="card-body">
+                                      <img id="img-crousel2" src="images/gifi-17.webp" alt="...">
+                                    </div>
+                                  </div>
+          
+                                  <div class="card image">
+                                    <div class="card-body">
+                                      <img id="img-crousel2" src="images/gifi-18.webp" class="d-flex " alt="...">
+                                    </div>
+                                  </div>
+          
+                                  <div class="card image">
+                                    <div class="card-body">
+                                      <img id="img-crousel2" src="images/gifi-19.gif" alt="...">
+                                    </div>
+                                  </div> -->
+
+                                </div>
+                              </div>
+                            </div>
+                              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                              </button>
+                              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                              </button>
+                          </div>
+                        </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- section-3 -->
+    <div class="hero-2 hero-3">
+      <div class="trending">
+          <div class="part-1">
+            <i class="fa-brands fa-deviantart"></i>
+            <div>Artists</div>
+          </div>
+          <div class="all-gif">
+            All The Giphy Artists &nbsp <i class="fa-solid fa-chevron-right"></i>
+          </div>
+      </div>
+        <div class="trend">   
+          <div class="part-2">
+            <div class="container-fluid p-2">
+                  <div class="main-div w-75 d-flex">
+                      <div id="carouselExample" class="carousel slide" data-bs-interval="false">
+                          <div class="carousel-inner">
+                            <div class="carousel-item active">
+                              <div class="card-wrapper card-wrap1 d-flex" [interval]="'0'">
+                                <!-- <div class="card image">
+                                  <div class="card-body">
+                                    <img id="img-crousel1" src="images/gifi-2.webp" alt="...">
+                                  </div>
+                                </div> -->
+        
+                                <!-- <div class="card image">
+                                  <div class="card-body">
+                                    <img id="img-crousel1" src="images/gifi-3.webp" class="d-flex " alt="...">
+                                  </div>
+                                </div> -->
+        
+                                <!-- <div class="card image">
+                                  <div class="card-body">
+                                    <img id="img-crousel1" src="images/gifi-4.webp" alt="...">
+                                  </div>
+                                </div> -->
+
+                              </div>
+                            </div>
+                            <div class="carousel-item">
+                              <div class="card-wrapper card-wrap2 d-flex">
+                                <!-- <div class="card image">
+                                  <div class="card-body">
+                                    <img id="img-crousel1" src="images/gifi-8.webp" alt="...">
+                                  </div>
+                                </div> -->
+        
+                                <!-- <div class="card image">
+                                  <div class="card-body">
+                                    <img id="img-crousel1" src="images/gifi-9.webp" class="d-flex " alt="...">
+                                  </div>
+                                </div> -->
+        
+                                <!-- <div class="card image">
+                                  <div class="card-body">
+                                    <img id="img-crousel1" src="images/gifi-10.gif" alt="...">
+                                  </div>
+                                </div> -->
+                                
+
+                                
+                              </div>
+                            </div>
+                      
+                            <div class="carousel-item">
+                              <div class="card-wrapper card-wrap3 d-flex">
+                                <!-- <div class="card image">
+                                  <div class="card-body">
+                                    <img id="img-crousel1" src="images/gifi-14.jpg" alt="...">
+                                  </div>
+                                </div>
+        
+                                <div class="card image">
+                                  <div class="card-body">
+                                    <img id="img-crousel1" src="images/gifi-15.png" class="d-flex " alt="...">
+                                  </div>
+                                </div> -->
+        
+                                <!-- <div class="card image">
+                                  <div class="card-body">
+                                    <img id="img-crousel1" src="images/gifi-16.jpg" alt="...">
+                                  </div>
+                                </div> -->
+
+                              </div>
+                            </div>
+                          </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                      </div> 
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- section-3 -->
+
+
+  <!-- section-4 -->
+  <div class="hero-2 hero-4">
+    <div class="trending">
+        <div class="part-1">
+          <i class="fa-solid fa-volume-off"></i>
+          <div>Clips</div>
+        </div>
+        <div class="all-gif">
+          All Clips &nbsp <i class="fa-solid fa-chevron-right"></i>
+        </div>
+    </div>
+
+    <div class="clips">
+      <img src="" alt="">
+      <img src="" alt="">
+      <img src="" alt="">
+    </div>
+</div>
+
+
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
+</html>
