@@ -33,6 +33,7 @@ btn.addEventListener('click', (ev)=>{
       console.log(res.data);
      if(res.data){
       console.log(res.data);
+      factList.innerHTML = "";
       res.data.forEach((element) => {
         const img = document.createElement("img");
         img.src = element.images.original.url;
